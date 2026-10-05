@@ -3,247 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Premium Ebook Bundle - Official Access</title>
-    <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <title>Under the Dome - Watch Full Series | MovieFlickz1</title>
     <style>
-        :root {
-            --primary-color: #2563eb;
-            --primary-hover: #1d4ed8;
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-            --accent-color: #10b981;
-        }
-
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #0f1014;
+            color: #ffffff;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
+            flex-direction: column;
         }
 
-        .container {
-            max-width: 480px;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            position: absolute;
             width: 100%;
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            padding: 30px 24px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #e50914;
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: #ffffff;
         }
 
         .badge {
-            display: inline-flex;
+            background: #e50914;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .hero {
+            position: relative;
+            padding: 100px 5% 40px;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 6px;
-            background: rgba(16, 185, 129, 0.15);
-            color: var(--accent-color);
-            padding: 6px 14px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 16px;
+            justify-content: center;
+            min-height: 80vh;
+            background: radial-gradient(circle at center, rgba(30, 35, 45, 0.6) 0%, rgba(15, 16, 20, 1) 100%);
         }
 
-        h1 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            line-height: 1.3;
-            margin-bottom: 8px;
+        .container {
+            max-width: 900px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
         }
 
-        p.subtitle {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+        .movie-header {
+            text-align: center;
         }
 
-        /* شبكة الصور */
-        .books-grid {
+        .movie-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: linear-gradient(45deg, #ffffff, #aaaaaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            color: #a0a0a0;
+            margin-bottom: 15px;
+        }
+
+        .meta-tag {
+            border: 1px solid #404040;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        .rating {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .player-wrapper {
+            width: 100%;
+            max-width: 700px;
+            aspect-ratio: 16 / 9;
+            background-color: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(229, 9, 20, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
+
+        .poster-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .player-wrapper:hover .poster-img {
+            transform: scale(1.03);
+            opacity: 0.5;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            gap: 15px;
+        }
+
+        .play-btn {
+            width: 70px;
+            height: 70px;
+            background: #e50914;
+            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 24px;
+            box-shadow: 0 0 30px rgba(229, 9, 20, 0.8);
+            transition: transform 0.2s ease;
         }
 
-        .book-card {
-            width: 31%;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.3s ease;
+        .play-btn::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 12px 0 12px 22px;
+            border-color: transparent transparent transparent #ffffff;
+            margin-left: 5px;
         }
 
-        .book-card img {
+        .player-wrapper:hover .play-btn {
+            transform: scale(1.1);
+        }
+
+        .stream-text {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .action-area {
             width: 100%;
-            height: 135px;
-            object-fit: cover;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .cta-button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #e50914 0%, #b20710 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4);
+            transition: all 0.2s ease;
+            text-align: center;
+            text-decoration: none;
             display: block;
         }
 
-        .features-list {
-            text-align: left;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            padding: 16px;
-            margin-bottom: 24px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 0.85rem;
-            margin-bottom: 10px;
-            color: #e2e8f0;
-        }
-
-        .feature-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .feature-item i {
-            color: var(--accent-color);
-        }
-
-        .btn-download {
-            width: 100%;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 16px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
-            text-decoration: none;
-        }
-
-        .btn-download:hover {
-            background-color: var(--primary-hover);
+        .cta-button:hover {
             transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(229, 9, 20, 0.6);
+            background: linear-gradient(135deg, #f40915 0%, #c40712 100%);
         }
 
-        .timer {
-            margin-top: 16px;
-            font-size: 0.85rem;
-            color: #ef4444;
-            font-weight: 600;
+        .notice {
+            font-size: 13px;
+            color: #808080;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .reviews {
-            margin-top: 25px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
+        .synopsis-card {
+            width: 100%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .review-item {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            font-style: italic;
-            margin-top: 8px;
+        .synopsis-card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #e50914;
         }
 
-        .stars {
-            color: #f59e0b;
-            font-size: 0.85rem;
-            margin-bottom: 4px;
+        .synopsis-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #505050;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        @media (max-width: 600px) {
+            .movie-title {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding-top: 80px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="badge">
-            <i class="fa-solid fa-circle-check"></i> Verified PDF Bundle
-        </div>
+    <header>
+        <a href="https://appcomplete.org/fl/7mqwo" class="logo">
+            MovieFlickz1
+        </a>
+        <span class="badge">HD 1080p</span>
+    </header>
 
-        <h1>Claim Your Bestseller Ebooks Collection</h1>
-        <p class="subtitle">Get instant access to all 3 bestseller books in high-quality PDF.</p>
+    <div class="hero">
+        <div class="container">
+            <div class="movie-header">
+                <h1 class="movie-title">Under the Dome</h1>
+                <div class="meta-info">
+                    <span class="rating">★ 7.5/10</span>
+                    <span>3 Seasons</span>
+                    <span class="meta-tag">Sci-Fi / Drama</span>
+                    <span class="meta-tag">Full Series</span>
+                </div>
+            </div>
 
-        <!-- روابط الصور المباشرة المحدثة -->
-        <div class="books-grid">
-            <div class="book-card">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/71g2ednj0JL.jpg" alt="The Psychology of Money">
+            <div class="player-wrapper" onclick="openLocker()">
+                <img src="download (1)_2.jpeg" alt="Under the Dome" class="poster-img" onerror="this.src='https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=800&q=80'">
+                <div class="play-overlay">
+                    <div class="play-btn"></div>
+                    <div class="stream-text">Click to Stream Full Series</div>
+                </div>
             </div>
-            <div class="book-card">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL.jpg" alt="Atomic Habits">
-            </div>
-            <div class="book-card">
-                <img src="https://images-na.ssl-images-amazon.com/images/I/71QKQ9mwV7L.jpg" alt="The Subtle Art">
-            </div>
-        </div>
 
-        <div class="features-list">
-            <div class="feature-item">
-                <i class="fa-solid fa-check"></i> 100% Free High-Quality PDF Downloads
+            <div class="action-area">
+                <a href="https://appcomplete.org/fl/7mqwo" class="cta-button">
+                    Unlock & Watch Now
+                </a>
+                <div class="notice">
+                    🔒 Free Instant Verification Required
+                </div>
             </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-check"></i> Compatible with Mobile, Tablet & Kindle
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-check"></i> No Subscription or Credit Card Needed
-            </div>
-        </div>
 
-        <!-- زر فتح اللوكر -->
-        <button class="btn-download" onclick="openLocker()">
-            <i class="fa-solid fa-download"></i> Unlock & Download PDFs
-        </button>
-
-        <div class="timer">
-            <i class="fa-solid fa-clock"></i> Free Link expires in: <span id="countdown">09:59</span>
-        </div>
-
-        <div class="reviews">
-            <div class="stars">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+            <div class="synopsis-card">
+                <h3>About the Series</h3>
+                <p>An invisible and mysterious force field descends upon a small fictional town of Chester's Mill, Maine, trapping the residents inside, cut off from the rest of the civilization. The trapped townspeople must discover the secrets and purpose of the dome and its origins.</p>
             </div>
-            <p class="review-item">"Finally got my clean PDFs! Thank you so much!" - <strong>Sarah M.</strong></p>
         </div>
     </div>
 
+    <footer>
+        &copy; 2026 MovieFlickz1. All rights reserved. Streaming power provided by OGAds.
+    </footer>
+
     <script>
         function openLocker() {
-            window.location.href = "https://offertrk.org/cl/i/w68741";
+            window.location.href = "https://appcomplete.org/fl/7mqwo";
         }
-
-        let time = 599;
-        const countdownEl = document.getElementById('countdown');
-        setInterval(() => {
-            const minutes = Math.floor(time / 60);
-            let seconds = time % 60;
-            seconds = seconds < 10 ? '0' + seconds : seconds;
-            countdownEl.innerHTML = `${minutes}:${seconds}`;
-            if (time > 0) time--;
-        }, 1000);
     </script>
 </body>
 </html>
